@@ -1,10 +1,7 @@
 """Asynchronous Python client for the Worldtides API."""
 from __future__ import annotations
 
-try:
-    from pydantic.v1 import BaseModel, Field
-except ImportError:
-    from pydantic import BaseModel, Field  # type: ignore
+from pydantic import BaseModel, Field
 
 
 class StationResponse(BaseModel):
