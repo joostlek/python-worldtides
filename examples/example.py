@@ -2,13 +2,13 @@
 
 import asyncio
 
-from python_worldtides import Worldtides, StationResponse
+from python_worldtides import StationResponse, Worldtides
 
 
 async def main() -> None:
     """Show example of fetching tide stations from Worldtides."""
     async with Worldtides() as worldtides:
-        states: StationResponse = await worldtides.get_stations()
+        states: StationResponse = await worldtides.get_stations(10.0, 10.0, 50)
         print(states)
 
 
