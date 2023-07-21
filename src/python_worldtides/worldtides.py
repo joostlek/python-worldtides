@@ -79,7 +79,7 @@ class Worldtides:
             self._close_session = True
         data.setdefault(uri, "")
         data.setdefault("key", self._api_key)
-        print(url.with_query(data))
+
         try:
             async with async_timeout.timeout(self.request_timeout):
                 response = await self.session.request(
