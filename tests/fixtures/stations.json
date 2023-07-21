@@ -1,0 +1,16 @@
+{
+    "status": 200,
+    "callCount": 1,
+    "requestLat": 33.768321,
+    "requestLon": -118.195617,
+    "stationDistance": 50,
+    "stations": [
+        {
+            "id": "NOAA_SUB",
+            "name": "Long Beach, California",
+            "lat": "45.771702",
+            "lon": "-45.209999",
+            "timezone": "America\/Los_Angeles"
+        }
+    ]
+}
