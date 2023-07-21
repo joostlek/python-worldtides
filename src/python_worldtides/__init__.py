@@ -1,7 +1,7 @@
 """Asynchronous Python client for the Worldtides API."""
 
 from .exceptions import WorldtidesCoordinateError, WorldtidesError
-from .models import StationResponse, Station
+from .models import Station, StationResponse
 from .worldtides import Worldtides
 
 __all__ = [
@@ -9,5 +9,5 @@ __all__ = [
     "WorldtidesError",
     "WorldtidesCoordinateError",
     "Station",
-    "StationResponse"
+    "StationResponse",
 ]

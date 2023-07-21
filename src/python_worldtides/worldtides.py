@@ -2,15 +2,14 @@
 from __future__ import annotations
 
 import asyncio
-import math
 import socket
 from dataclasses import dataclass, field
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 from importlib import metadata
 from typing import Any, cast
 
 import async_timeout
-from aiohttp import BasicAuth, ClientError, ClientResponseError, ClientSession
+from aiohttp import ClientError, ClientResponseError, ClientSession
 from aiohttp.hdrs import METH_GET
 from yarl import URL
 
@@ -116,26 +115,26 @@ class Worldtides:
         self,
         latitude: float,
         longitude: float,
-        station_distance: int
+        station_distance: int,
     ) -> StationResponse:
         """Retrieve stations for a specific place with radius."""
-
-        data = await self._request("stations", data={
-            "lat": latitude,
-            "lon": longitude,
-            "stationDistance": station_distance
-        })
+        data = await self._request(
+            "stations",
+            data={
+                "lat": latitude,
+                "lon": longitude,
+                "stationDistance": station_distance,
+            },
+        )
 
         return StationResponse.parse_obj(data)
-
-
 
     async def close(self) -> None:
         """Close open client session."""
         if self.session and self._close_session:
             await self.session.close()
 
-    async def __aenter__(self) -> "Worldtides":
+    async def __aenter__(self) -> Worldtides:
         """Async enter.
 
         Returns

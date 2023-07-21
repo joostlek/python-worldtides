@@ -4,7 +4,7 @@ from __future__ import annotations
 try:
     from pydantic.v1 import BaseModel, Field
 except ImportError:
-    from pydantic import BaseModel, Field # type: ignore
+    from pydantic import BaseModel, Field  # type: ignore
 
 
 class StationResponse(BaseModel):
@@ -16,6 +16,7 @@ class StationResponse(BaseModel):
     longitude: float = Field(..., alias="requestLon")
     station_distance: int = Field(..., alias="stationDistance")
     stations: list[Station] = Field([])
+
 
 class Station(BaseModel):
     """Represents the station model."""
